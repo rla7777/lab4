@@ -26,6 +26,11 @@ class dayOfyear
     }
 
 public:
+dayOfyear (int m, int d=1): month{m}, day{d}
+{
+    testMonth();
+    testDay();
+}
 void input()
 {
  std::cout << "Enter the month as a number: ";
@@ -35,7 +40,7 @@ void input()
 }
 void setMonth(int m){month=m; testMonth();}
 void setDay(int d){day=d; testDay();}
-void print()
+void print() const
 {
  switch(month)
  {
@@ -54,8 +59,8 @@ void print()
     } 
     std::cout <<day<<"\n";
 }
-int getMonth(){return month;}
-int getDay(){return day;}
+int getMonth() const {return month;}
+int getDay() const {return day;}
 };
 }
 // 1. 본인이름학번의 네임스페이스
